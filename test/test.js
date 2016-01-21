@@ -23,7 +23,6 @@ test("can",function(t){
     t.equals(metrics[1].attribute,1,'should have attribute')
 
     t.end()
-    emitter.destroy()
   })
 
 
