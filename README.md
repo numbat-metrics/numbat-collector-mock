@@ -37,11 +37,11 @@ this handles quite a few race conditions for you so you can reliably test that y
   - returns Collector
 
 ### Collector 
-  - collector is a stream. it emits data events for each metric it recieves.
+  - collector is a stream. it emits data events for each metric it receives.
 
 ### Collector.finished(callback)
  - callback - function(err,metrics).
-   - this is trigered when metrics should have been recieved.
+   - this is trigered when metrics should have been received.
    - err
       - an error may be triggered if numbat-emitter fails to connect to the mock server at all.
    - metrics
