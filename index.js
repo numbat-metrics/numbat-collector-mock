@@ -1,6 +1,6 @@
 var net = require('net')
 var bsplit = require('binary-split')
-var eos = require('end0-of-stream')
+var eos = require('end-of-stream')
 
 module.exports = function(port){
   var s
