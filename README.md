@@ -26,7 +26,7 @@ collector.finished(function(err,metrics){
 ```
 
 
-this handles quite a few race conditions for you so you can reliably test that your application code is sending the metrics you intend.
+Test that your application code is sending the metrics you intend.
 
 
 ## api
@@ -48,5 +48,5 @@ this handles quite a few race conditions for you so you can reliably test that y
       - and array containing each metric sent from numbat-emitter
  - returns nothing.
  
-use this function after your code has passed metrics to numbat-emitter. it will carefully handle the callback so it get's triggered at the right time.
+Use this function after your code should have passed metrics to numbat-emitter. it will carefully handle the callback so it get's triggered at the right time.
 It will dispose of the server and close any numbat-emitter connections so that you can get a clean start for the next test.
