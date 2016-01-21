@@ -1,16 +1,35 @@
 var net = require('net')
+var bsplit = require('binary-split')
+var eos = require('end0-of-stream')
 
 module.exports = function(port){
-
+  var s
   var server = net.createServer(function(con){
-    con.on('data',console.log)
+    con.pipe(bsplit()).pipe(s,{end:false})
+    con.unref()
   })
 
   server.listen(port||3333)
 
+  server.unref()
+
   server.metrics = []
 
-  return server
+  s = through2.obj(function(l,enc,cb){
+    cb(false,json(l))   
+  })
 
+  eos(s,function(){
+    s.destory()
+  })
 
+  return s
+}
+
+function json(l){
+  try{ 
+    return JSON.parse(l)
+  } catch(e){
+  
+  }
 }

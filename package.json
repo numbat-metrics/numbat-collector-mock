@@ -1,0 +1,34 @@
+{
+  "name": "numbat-collector-mock",
+  "version": "1.0.0",
+  "description": "a mock numbat-collector for your tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numbat-metrics/numbat-collector-mock.git"
+  },
+  "keywords": [
+    "numbat",
+    "metrics",
+    "test"
+  ],
+  "author": "Ryan Day <soldair@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/numbat-metrics/numbat-collector-mock/issues"
+  },
+  "homepage": "https://github.com/numbat-metrics/numbat-collector-mock#readme",
+  "dependencies": {
+    "binary-split": "^1.0.0",
+    "end-of-stream": "^1.1.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "numbat-emitter": "^2.1.0",
+    "nyc": "^5.3.0",
+    "tape": "^4.4.0"
+  }
+}
