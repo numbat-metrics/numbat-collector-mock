@@ -1,6 +1,6 @@
 {
   "name": "numbat-collector-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a mock numbat-collector for your tests",
   "main": "index.js",
   "scripts": {
