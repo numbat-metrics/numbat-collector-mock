@@ -17,6 +17,8 @@ module.exports = function(port){
     con.on('close',function(){
       if(con === connected) connected = false;
       connections.splice(connections.indexOf(con),1)
+    }).on('error',function(){
+      // nope. collector mock does not care.
     })
 
     connections.push(con)
@@ -25,19 +27,24 @@ module.exports = function(port){
   server.listen(port||3333)
   server.unref()
 
+  function end(){
+    server.close()
+    connections.forEach(function(c){
+      c.end()
+    })
+    s.emit('flushed',s.metrics) 
+  }
+
   s = through2.obj(function(l,enc,cb){
     var o = json(l)
     if(!o) return
     s.metrics.push(o)
     cb(false,o)   
   },function(cb){
-    server.close()
-    connections.forEach(function(c){
-      c.end()
-    })
-
+    end()
     cb()
-    s.emit('flushed',s.metrics)
+  }).on('error',function(err){
+    end()
   })
 
   s.metrics = []
