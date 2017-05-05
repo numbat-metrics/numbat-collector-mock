@@ -1,4 +1,6 @@
 # numbat-collector-mock
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/numbat-metrics/numbat-collector-mock.svg)](https://greenkeeper.io/)
 a mock numbat collector server for your tests
 
 ```js
